@@ -145,10 +145,10 @@ console.log(getName(leiaPerson));
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(fruit) {
+  return fruit.indexOf('apple');
 }
-
+console.log(appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']));
 /**
  * ### Challenge `isItAnApple`
  * 
@@ -164,12 +164,18 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(fruitA) {
+  const basket = [];
+  for (let i=0; i < fruitA.length; i++) {
+    if (fruitA[i] === 'apple') {
+      basket.push(true);
+    } else {
+      basket.push(false)
+    }
+  }
+  return basket;
 }
-
-
-
+console.log(isItAnApple(['orange', 'apple', 'banana', 'apple', 'apples', 'mango']));
 
 // ⭐️ Example Test Data ⭐️
 
