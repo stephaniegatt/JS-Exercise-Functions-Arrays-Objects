@@ -36,11 +36,10 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-const name = "Stephanie";
 function sayGoodbye(name) {
-  return "Goodbye, " + `${name}` + ". Have a great Day,";
+  return `Goodbye, ${name}. Have a great Day.`;
 }
-console.log(sayGoodbye(name));
+console.log(sayGoodbye("Andy"));
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -56,10 +55,10 @@ console.log(sayGoodbye(name));
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(t) {
+ return Math.round(t * 9 / 5 + 32);
 }
-
+console.log(temperatureCtoF(24))
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -77,11 +76,15 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temp, unit) {
+  if (unit === `F`) {
+    return temp + unit;
+  }
+  else if (unit === `C`) {
+    return temperatureCtoF(temp) + `F`;
+  }
 }
-
-
+console.log(temperatureInF(24, `C`));
 /**
  * ### Challenge `makePersonObject`
  * 
@@ -98,10 +101,16 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
-}
 
+function makePersonObject(id, name, email) {
+  const person = {
+    id: id,
+    name: name,
+    email: email,
+  }
+  return person;
+}
+console.log(makePersonObject(5, `Leia`, `leia@leia.com`))
 /**
  * ### Challenge `getName`
  * 
@@ -115,10 +124,11 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(object) {
+  return `Hello, my name is ${object.name}`;
 }
-
+const leiaPerson = makePersonObject(5, `Leia`, `leia@leia.com`)
+console.log(getName(leiaPerson));
 
 /**
  * ### Challenge `appleIndex`
