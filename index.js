@@ -36,9 +36,11 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
+const name = "Stephanie";
+function sayGoodbye(name) {
+  return "Goodbye, " + `${name}` + ". Have a great Day,";
 }
+console.log(sayGoodbye(name));
 
 /**
  * ### Challenge `temperatureCtoF`
