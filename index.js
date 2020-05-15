@@ -148,7 +148,8 @@ console.log(getName(leiaPerson));
 function appleIndex(fruit) {
   return fruit.indexOf('apple');
 }
-console.log(appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']));
+const fruit = ['orange', 'grape', 'apple', 'banana', 'mango'];
+console.log(appleIndex(fruit));
 /**
  * ### Challenge `isItAnApple`
  * 
@@ -228,9 +229,14 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
-}
+  
+  const car = inventory[index];
+  const car_make = car.car_make;
+  const car_model = car.car_model;
 
+  return `This is a ${car_make} ${car_model}`;
+}
+console.log(getCarInfoByIndex(inventory, 3));
 /**
  * ### Challenge `getLastCarInfo`
  * 
@@ -242,10 +248,11 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  const index = inventory.length - 1;
+  return getCarInfoByIndex(inventory, index);
 }
-
+console.log(getLastCarInfo(inventory));
 /**
  * ### Challenge `getModelYears`
  * 
@@ -255,9 +262,14 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(inventoryOfCars) {
+  const years = [];
+  for (let i = 0; i < inventoryOfCars.length; i ++) {
+    years.push(inventoryOfCars[i].car_year);
+  }
+  return years;
 }
+console.log(getModelYears(inventory));
 
 /**
  * ### Challenge `getCarInfoById`
